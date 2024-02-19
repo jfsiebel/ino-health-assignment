@@ -1,5 +1,4 @@
 import { createTRPCReact } from "@trpc/react-query";
-import { httpBatchLink } from "@trpc/client";
 import { AppRouter } from "@/server";
 
 export function getBaseUrl() {

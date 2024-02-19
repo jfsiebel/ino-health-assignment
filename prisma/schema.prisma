@@ -11,7 +11,27 @@ datasource db {
 }
 
 model Exam {
-  id String @id @default(uuid())
+  id                   String   @id @default(uuid())
+  client_id            String
+  date_testing         DateTime @db.Date
+  date_birthdate       DateTime @db.Date
+  gender               Int
+  ethnicity            Int
+  creatine             Decimal  @db.Decimal(6, 2)
+  creatine_unit        String
+  chloride             Decimal  @db.Decimal(6, 2)
+  chloride_unit        String
+  fasting_glucose      Decimal  @db.Decimal(6, 2)
+  fasting_glucose_unit String
+  potassium            Decimal  @db.Decimal(6, 2)
+  potassium_unit       String
+  sodium               Decimal  @db.Decimal(6, 2)
+  sodium_unit          String
+  total_calcium        Decimal  @db.Decimal(6, 2)
+  total_calcium_unit   String
+  total_protein        Decimal  @db.Decimal(6, 2)
+  total_protein_unit   String
 
+  @@index([client_id])
   @@map("exams")
 }
