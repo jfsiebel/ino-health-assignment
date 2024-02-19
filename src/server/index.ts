@@ -24,15 +24,14 @@ export const appRouter = createTRPCRouter({
 
 async function init() {
   console.log("Calling init function");
-  const mockData = await fetch(process.env.MOCK_DATA_URL);
+  const mockData = await fetch("https://mockapi-furw4tenlq-ez.a.run.app/data");
   const response = await mockData.json();
+
+  const repository = new ExamRepository();
 
   console.log("Saving response to database");
   for (const exam of response) {
-
-    await prisma.exam.create({
-      data: examDTO,
-    });
+    await repository.create(exam);
   }
   console.log("end of init function");
 }
