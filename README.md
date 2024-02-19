@@ -26,3 +26,8 @@ When all the previous steps are done you can run the project with:
 ```bash
 npm run dev
 ```
+
+
+
+## Link
+You can find the assignment running in Vercel on: http://ino-health-assignment.vercel.app
