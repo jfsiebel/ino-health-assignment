@@ -1,6 +1,6 @@
 "use client";
 
-import ExamsList from "./(components)/ExamsList";
+import ExamsList from "./_components/ExamsList";
 
 export default function Home() {
   return (

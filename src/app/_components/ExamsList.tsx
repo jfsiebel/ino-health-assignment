@@ -1,4 +1,4 @@
-import { trpc } from "../(trpc)/client";
+import { trpc } from "../_trpc/client";
 import ExamItem from "./ExamItem";
 
 export default function ExamsList() {
@@ -13,12 +13,13 @@ export default function ExamsList() {
   return (
     <>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-slate-400"
+        disabled={refreshData.isLoading}
         onClick={async () => {
           refreshData.mutate();
         }}
       >
-        Refresh data
+        {refreshData.isLoading ? "Loading..." : "Refresh data"}
       </button>
       <div className="table-auto border border-collapse">
         <table className="w-full text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400">

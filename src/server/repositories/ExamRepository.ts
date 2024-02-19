@@ -17,6 +17,9 @@ export class ExamRepository {
   async find(qty: number) {
     const exams = await prisma.exam.findMany({
       take: qty,
+      orderBy: {
+        id: "desc",
+      },
     });
 
     return { exams };
